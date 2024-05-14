@@ -19,4 +19,6 @@ public class Customer extends WithCodeAndName {
     @Column(length = 5000)
     private String address;
 
+    private boolean isActive;
+
 }

@@ -15,21 +15,23 @@ import java.time.OffsetDateTime;
 
 @Entity
 @Table(uniqueConstraints = {
-        @UniqueConstraint(name = "order_uk", columnNames = {"code"}),
+        @UniqueConstraint(name = "cart_detail_uk", columnNames = {"code"}),
 })
 @Getter
 @Setter
-public class Order extends WithCode {
+public class CartDetail extends WithCode {
 
     @CreationTimestamp
     @Column(nullable = false, updatable = false)
     public OffsetDateTime createdAt;
 
     @ManyToOne(optional = false)
-    private Customer customer;
+    private Cart cart;
 
     @ManyToOne(optional = false)
     private Product product;
+
+    private int quantity;
 
     private BigDecimal total;
 }

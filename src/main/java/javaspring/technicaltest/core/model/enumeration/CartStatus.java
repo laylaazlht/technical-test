@@ -2,12 +2,12 @@ package javaspring.technicaltest.core.model.enumeration;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum ProductType {
-    LAPTOP("LAPTOP"), BOOK("BOOK");
+public enum CartStatus {
+    ACTIVE("ACTIVE"), INACTIVE("INACTIVE"), PROCESS("PROCESS"), PAID("PAID"), DELIVERED("DELIVERED");
 
     private final String code;
 
-    ProductType(String code) {
+    CartStatus(String code) {
         this.code = code;
     }
 
